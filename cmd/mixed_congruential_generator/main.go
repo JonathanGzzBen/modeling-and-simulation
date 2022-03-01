@@ -16,8 +16,11 @@ func main() {
 	for n := 1; n <= m; n++ {
 		addition, x1, rectangularNumber := pkg.MixedCongruentialGeneration(a, x0Aux, c, m)
 		intPart := addition / m
-		residueNumerator := addition - (intPart * m)
+		residueNumerator := addition - ((addition / m) * m)
 		fmt.Printf("%2d\t%2d\t%2d + %2d/%-2d\t%3d\t%10.5f\n", n, x0Aux, intPart, residueNumerator, m, x1, rectangularNumber)
+		if x1 == x0 {
+			break
+		}
 		x0Aux = x1
 	}
 }
