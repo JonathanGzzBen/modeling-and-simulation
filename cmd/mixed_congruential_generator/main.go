@@ -13,7 +13,8 @@ func main() {
 	m := readIntOrExit("Enter m: ", "invalid \"m\" value")
 	x0Aux := x0
 	fmt.Println("\n n\tx0\t(ax0+c)modm\txn+1\tNúmeros rectangulares")
-	for n := 1; n <= m; n++ {
+	var n int
+	for n = 1; n <= m; n++ {
 		addition, x1, rectangularNumber := pkg.MixedCongruentialGeneration(a, x0Aux, c, m)
 		intPart := addition / m
 		residueNumerator := addition - ((addition / m) * m)
@@ -22,6 +23,11 @@ func main() {
 			break
 		}
 		x0Aux = x1
+	}
+	if n == m {
+		fmt.Println("Generador congruencial mixto confiable")
+	} else {
+		fmt.Println("Generador congruencial mixto no confiable")
 	}
 }
 
