@@ -18,6 +18,7 @@ func zAlphaHalf(alpha float64) float64 {
 	alphaReal := 100.0 - (100.0 * alpha)
 	alphaHalf := (alphaReal / 100.0) / 2.0
 	fmt.Printf("α real = 100 - %v = %v%%\n", alpha*100.0, alphaReal)
+	fmt.Printf("Zα/2 = Z.%v/2 = Z%v\n", alphaReal, alphaHalf)
 	return alphaHalf
 }
 
@@ -32,6 +33,7 @@ func AverageStatistical(average float64, alpha float64) bool {
 	zAlphaHalf := zAlphaHalf(alpha)
 	var zAlphaHalfValue float64
 	fmt.Printf("Ingrese valor de Z%v: ", zAlphaHalf)
-	fmt.Scanf("%f\n", &zAlphaHalfValue)
+	_, _ = fmt.Scanf("%f\n", &zAlphaHalfValue)
+	fmt.Printf("Zα/2 = %v\n", zAlphaHalfValue)
 	return isAccepted(z0, zAlphaHalfValue)
 }

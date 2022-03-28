@@ -9,18 +9,18 @@ import (
 func main() {
 	n := readIntOrExit("Ingrese cantidad de numeros: ", "valor de \"n\" no válido")
 	sum := 0.0
-	for i := 0; i < n; i++ {
-		fmt.Print("Ingrese numero: ")
-		var in float64
-		fmt.Scanf("%f\n", &in)
-		sum += in
+
+	rectangularNumbers := pkg.GetRectangularNumbers(n)
+	for _, rn := range rectangularNumbers {
+		sum += rn
 	}
+
 	avg := sum / float64(n)
 	fmt.Print("Ingrese α: ")
 	var alpha float64
 	_, err := fmt.Scanf("%f\n", &alpha)
 	if err != nil {
-		fmt.Errorf("α invalido\n")
+		_ = fmt.Errorf("α invalido\n")
 		return
 	}
 	if pkg.AverageStatistical(avg, alpha) {
