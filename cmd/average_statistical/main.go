@@ -3,11 +3,10 @@ package main
 import (
 	"fmt"
 	"modeling-and-simulation/pkg"
-	"os"
 )
 
 func main() {
-	n := readIntOrExit("Ingrese cantidad de numeros: ", "valor de \"n\" no válido")
+	n := pkg.ReadIntOrExit("Ingrese cantidad de numeros: ", "valor de \"n\" no válido")
 	sum := 0.0
 
 	rectangularNumbers := pkg.GetRectangularNumbers(n)
@@ -28,15 +27,4 @@ func main() {
 	} else {
 		fmt.Println("Los numeros son rechazados")
 	}
-}
-
-func readIntOrExit(prompt string, errorMessage string) int {
-	fmt.Print(prompt)
-	var value int
-	_, err := fmt.Scanf("%d\n", &value)
-	if err != nil {
-		_ = fmt.Errorf(errorMessage)
-		os.Exit(1)
-	}
-	return value
 }

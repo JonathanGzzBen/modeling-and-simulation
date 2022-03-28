@@ -3,13 +3,12 @@ package main
 import (
 	"fmt"
 	"modeling-and-simulation/pkg"
-	"os"
 )
 
 func main() {
-	a := readIntOrExit("Enter a: ", "invalid \"a\" value")
-	x0 := readIntOrExit("Enter x0: ", "invalid \"x0\" value")
-	m := readIntOrExit("Enter m: ", "invalid \"m\" value")
+	a := pkg.ReadIntOrExit("Enter a: ", "invalid \"a\" value")
+	x0 := pkg.ReadIntOrExit("Enter x0: ", "invalid \"x0\" value")
+	m := pkg.ReadIntOrExit("Enter m: ", "invalid \"m\" value")
 
 	expectedPeriod := pkg.ExpectedPeriod(m)
 	fmt.Printf("Periodo esperado: %v\n", expectedPeriod)
@@ -32,15 +31,4 @@ func main() {
 		fmt.Println("Generador multiplicativo no confiable")
 	}
 
-}
-
-func readIntOrExit(prompt string, errorMessage string) int {
-	fmt.Print(prompt)
-	var value int
-	_, err := fmt.Scanf("%d\n", &value)
-	if err != nil {
-		_ = fmt.Errorf(errorMessage)
-		os.Exit(1)
-	}
-	return value
 }
