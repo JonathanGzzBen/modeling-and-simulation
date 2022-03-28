@@ -9,7 +9,7 @@ import (
 func GetRectangularNumbers(n int) []float64 {
 	fmt.Print("Quiere generar los numeros rectangulares automaticamente? [Y/n]: ")
 	var input string
-	fmt.Scanf("%s\n", &input)
+	_, _ = fmt.Scanf("%s\n", &input)
 	rectangularNumbers := make([]float64, n)
 	if input != "n" {
 		for i := 0; i < n; i++ {
@@ -21,7 +21,7 @@ func GetRectangularNumbers(n int) []float64 {
 		for i := 0; i < n; i++ {
 			fmt.Print("Ingrese numero: ")
 			var in float64
-			fmt.Scanf("%f\n", &in)
+			_, _ = fmt.Scanf("%f\n", &in)
 			rectangularNumbers = append(rectangularNumbers, in)
 		}
 	}
