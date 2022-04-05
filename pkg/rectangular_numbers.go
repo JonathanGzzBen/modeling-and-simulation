@@ -10,7 +10,7 @@ func GetRectangularNumbers(n int) []float64 {
 	fmt.Print("Quiere generar los numeros rectangulares automaticamente? [Y/n]: ")
 	var input string
 	_, _ = fmt.Scanf("%s\n", &input)
-	rectangularNumbers := make([]float64, n)
+	var rectangularNumbers []float64
 	if input != "n" {
 		for i := 0; i < n; i++ {
 			rectangularNumber := rand.Float64()
