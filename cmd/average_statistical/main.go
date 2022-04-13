@@ -15,6 +15,7 @@ func main() {
 	}
 
 	avg := sum / float64(n)
+	fmt.Printf("x- = %f\n", avg)
 	fmt.Print("Ingrese α: ")
 	var alpha float64
 	_, err := fmt.Scanf("%f\n", &alpha)

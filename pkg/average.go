@@ -10,7 +10,7 @@ func z0(average float64) float64 {
 	z0 := math.Abs(numerator / math.Pow(1.0/12.0, 0.5))
 	// Set precision to 5 decimal places
 	z0 = math.Round(z0*100000) / 100000
-	fmt.Printf("|((%.5f - 1/2) * √10) / (√1/12)| = %v\n", average, z0)
+	fmt.Printf("Z0 = |((%.5f - 1/2) * √10) / (√1/12)| = %v\n", average, z0)
 	return z0
 }
 
